@@ -1,0 +1,30 @@
+<div class="card add-pizza-card">
+  <div class="card-header">
+    Aggiungi Pizza
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label">Nome pizza</label>
+      <input type="text" class="form-control" #nomePizza>
+    </div>
+    <div class="mb-3">
+      <label for="ingredienti" class="form-label">Ingredienti</label>
+      <select class="form-select" (change)="aggiungiIngrediente($event.target!)">
+        <option selected disabled>...</option>
+        <option *ngFor="let ingrediente of ingredientiDisponibili" [value]="ingrediente">{{ ingrediente | firstLetterUpperCase }}</option>
+      </select>
+    </div>
+    <div class="mb-3 d-flex flex-wrap">
+      <div *ngFor="let ingrediente of ingredientiSelezionati" >
+        <button class="badge text-bg-primary chip" (click)="eliminaIngrediente($event.target!)" value="{{ ingrediente }}">
+          {{ ingrediente | firstLetterUpperCase }} <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end" >
+      <button type="button" class="btn btn-primary" (click)="mandaPizza()">
+        &nbsp;<i class="fa-solid fa-plus"></i>&nbsp;
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.pizza-card {
+  margin: 20px;
+  position: relative;
+  width: 50%;
+}
+
+.elimina-pizza {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 15pt;
+}
+
+.immagine {
+
+}

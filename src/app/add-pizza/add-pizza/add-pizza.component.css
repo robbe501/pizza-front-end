@@ -1,0 +1,11 @@
+.add-pizza-card {
+  width: 30%;
+  margin: 20px;
+}
+.chip {
+  margin-right: 3px;
+  cursor: pointer;
+  border: 0px;
+}
+
+

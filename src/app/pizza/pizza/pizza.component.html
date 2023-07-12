@@ -1,0 +1,16 @@
+<div class="card mb-3 pizza-card" style="max-width: 540px;">
+  <i class="fa-solid fa-xmark elimina-pizza"></i>
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="assets/pizza.png" class="img-fluid rounded-start immagine" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <ul class="">
+          <h5 class="card-title">{{pizza.nome}}</h5>
+          <li *ngFor="let ingrediente of pizza.ingredienti" class="list-group-item">{{ ingrediente | firstLetterUpperCase }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
