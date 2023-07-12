@@ -1,20 +1,23 @@
-
-
-
-<app-add-pizza (mandaPizzaEvento)="riceviPizza($event)"></app-add-pizza>
-<app-pizza *ngFor="let pizza of pizze" [pizza]="pizza"></app-pizza>
-<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
-
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <app-add-pizza (mandaPizzaEvento)="riceviPizza($event)"></app-add-pizza>
     </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
+    <div class="col-8">
+      <app-pizza (mandaPizzaDaEliminareEvento)="riceviPizzaDaEliminare($event)" *ngFor="let pizza of pizze" [pizza]="pizza"></app-pizza>
     </div>
   </div>
 </div>
+
+
+
+
+<ngb-toast *ngIf="pulsante.show" [autohide]="true" (hidden)="pulsante.show=false" class="notifica">
+	<ng-template ngbToastHeader>
+		<div class="me-auto">
+      <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" [attr.fill]="pulsante.colore"></rect>
+      </svg> Nuova notifica!
+		</div>
+	</ng-template>
+	{{ pulsante.testoNotifica }}
+</ngb-toast>

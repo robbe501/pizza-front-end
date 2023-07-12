@@ -1,7 +1,8 @@
 .pizza-card {
   margin: 20px;
-  position: relative;
-  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .elimina-pizza {
@@ -11,6 +12,3 @@
   font-size: 15pt;
 }
 
-.immagine {
-
-}

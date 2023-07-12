@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Pizza } from 'src/app/interfaces/pizza';
 
 @Component({
@@ -14,8 +14,15 @@ export class PizzaComponent {
     ingredienti: []
   }
 
+  @Output()
+  mandaPizzaDaEliminareEvento = new EventEmitter<Pizza>()
+
+
   visualizzaPizza() {
     console.log(this.pizza)
   }
 
+  mandaPizzaDaEliminare() {
+    this.mandaPizzaDaEliminareEvento.emit(this.pizza)
+  }
 }
